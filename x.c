@@ -2064,6 +2064,9 @@ main(int argc, char *argv[])
 	xsetcursor(cursorshape);
 
 	ARGBEGIN {
+	case 'I':
+		alpha = 0.9;
+		break;
 	case 'a':
 		allowaltscreen = 0;
 		break;
