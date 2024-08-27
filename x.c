@@ -2065,7 +2065,8 @@ main(int argc, char *argv[])
 
 	ARGBEGIN {
 	case 'I':
-		alpha = 0.9;
+		//alpha = 0.9;
+		alpha = strtof(EARGF(usage()), NULL);
 		break;
 	case 'a':
 		allowaltscreen = 0;
