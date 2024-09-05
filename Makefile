@@ -28,7 +28,7 @@ clean:
 
 dist: clean
 	mkdir -p st
-	cp -R Makefile config.mk\
+	cp -R Makefile LICENSE config.mk\
 		config.h arg.h st.h win.h $(SRC) st
 	tar -czf st.tar.gz st
 	rm -rf st/
