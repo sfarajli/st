@@ -24,15 +24,14 @@ st: $(OBJ)
 	$(CC) -o $@ $(OBJ) $(STLDFLAGS)
 
 clean:
-	rm -f st $(OBJ) st-$(VERSION).tar.gz
+	rm -f st $(OBJ) st.tar.gz
 
 dist: clean
-	mkdir -p st-$(VERSION)
-	cp -R FAQ LEGACY TODO LICENSE Makefile README config.mk\
-		config.def.h st.info st.1 arg.h st.h win.h $(SRC)\
-		st-$(VERSION)
-	tar -cf - st-$(VERSION) | gzip > st-$(VERSION).tar.gz
-	rm -rf st-$(VERSION)
+	mkdir -p st
+	cp -R Makefile config.mk\
+		config.h arg.h st.h win.h $(SRC) st
+	tar -czf st.tar.gz st
+	rm -rf st/
 
 install: st
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
