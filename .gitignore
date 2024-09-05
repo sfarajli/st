@@ -3,3 +3,4 @@ config.def.h
 st
 *.rej
 *.orig
+install.mk
