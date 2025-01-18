@@ -24,14 +24,14 @@ st: $(OBJ)
 	$(CC) -o $@ $(OBJ) $(STLDFLAGS)
 
 clean:
-	rm -f st $(OBJ) st.tar.gz
+	rm -f st $(OBJ) st-farajli-$(VERSION).tar.gz
 
 dist: clean
-	mkdir -p st
+	mkdir -p st-farajli-$(VERSION)
 	cp -R Makefile LICENSE config.mk\
-		config.h arg.h st.h win.h $(SRC) st
-	tar -czf st-farajli.tar.gz st
-	rm -rf st/
+		config.h arg.h st.h win.h $(SRC) st-farajli-$(VERSION)
+	tar -czf st-farajli-$(VERSION).tar.gz st-farajli-$(VERSION)
+	rm -rf st-farajli-$(VERSION)
 
 install: st
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
