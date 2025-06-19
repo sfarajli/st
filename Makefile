@@ -33,6 +33,7 @@ dist: clean
 	tar -czf st_farajli-$(VERSION).tar.gz st_farajli-$(VERSION)
 	rm -rf st_farajli-$(VERSION)
 
+# FIXME: Doesn't install man pages
 install: st
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
 	cp -f st $(DESTDIR)$(PREFIX)/bin
