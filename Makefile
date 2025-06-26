@@ -28,8 +28,8 @@ clean:
 
 dist: clean
 	mkdir -p st_farajli-$(VERSION)
-	cp -R Makefile LICENSE config.mk\
-		config.h arg.h st.h win.h $(SRC) st_farajli-$(VERSION)
+	cp -R TODO LICENSE Makefile README config.mk config.h\
+		st.info st.1 arg.h st.h win.h $(SRC) st_farajli-$(VERSION)
 	tar -czf st_farajli-$(VERSION).tar.gz st_farajli-$(VERSION)
 	rm -rf st_farajli-$(VERSION)
 
