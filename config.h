@@ -104,7 +104,7 @@ static const char *colorname[] = {
     [5] = "#ff79c6", /* magenta */
     [6] = "#8be9fd", /* cyan    */
     [7] = "#bbbbbb", /* white   */
-                                  
+
     /* 8 bright colors */
     [8]  = "#44475a", /* black   */
     [9]  = "#ff5555", /* red     */
@@ -114,7 +114,7 @@ static const char *colorname[] = {
     [13] = "#ff79c6", /* magenta */
     [14] = "#8be9fd", /* cyan    */
     [15] = "#ffffff", /* white   */
-                                   
+
     /* special colors */
     [256] = "#282a36", /* background */
     [257] = "#f8f8f2", /* foreground */
@@ -200,21 +200,21 @@ static MouseShortcut mshortcuts[] = {
 #define TERMMOD (ControlMask|ShiftMask)
 
 static Shortcut shortcuts[] = {
-	/* mask                 keysym          function        argument */
-	{ XK_ANY_MOD,           XK_Break,       sendbreak,      {.i =  0} },
-	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
-	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
-	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-	{ ControlMask,          XK_equal,       zoom,           {.f = +1} },
-	{ ControlMask,          XK_minus,       zoom,           {.f = -1} },
-	{ ControlMask,          XK_0,       	zoomreset,      {.f =  0} },
-	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
-	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
-	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
-	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
-	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-	{ ControlMask,          XK_k,     	kscrollup,      {.i =  1} },
-	{ ControlMask,          XK_j,   	kscrolldown,    {.i =  1} },
+	/* mask                   keysym            function        argument */
+	{ XK_ANY_MOD,             XK_Break,         sendbreak,      {.i =  0} },
+	{ ControlMask,            XK_Print,         toggleprinter,  {.i =  0} },
+	{ ShiftMask,              XK_Print,         printscreen,    {.i =  0} },
+	{ XK_ANY_MOD,             XK_Print,         printsel,       {.i =  0} },
+	{ ControlMask,            XK_equal,         zoom,           {.f = +1} },
+	{ ControlMask,            XK_minus,         zoom,           {.f = -1} },
+	{ ControlMask,            XK_0,       	    zoomreset,      {.f =  0} },
+	{ TERMMOD,                XK_C,             clipcopy,       {.i =  0} },
+	{ TERMMOD,                XK_V,             clippaste,      {.i =  0} },
+	{ TERMMOD,                XK_Y,             selpaste,       {.i =  0} },
+	{ ShiftMask,              XK_Insert,        selpaste,       {.i =  0} },
+	{ TERMMOD,                XK_Num_Lock,      numlock,        {.i =  0} },
+	{ ControlMask,            XK_bracketleft,   kscrollup,      {.i =  5} },
+	{ ControlMask,            XK_bracketright,  kscrolldown,    {.i =  5} },
 };
 
 /*
@@ -465,6 +465,10 @@ static Key key[] = {
 	{ XK_F33,           XK_NO_MOD,      "\033[20;5~",    0,    0},
 	{ XK_F34,           XK_NO_MOD,      "\033[21;5~",    0,    0},
 	{ XK_F35,           XK_NO_MOD,      "\033[23;5~",    0,    0},
+	{ XK_j, ControlMask, "\033[1;5J", 0, 0 },
+
+	// Ctrl-k sends custom sequence
+	{ XK_k, ControlMask, "\033[1;5K", 0, 0 },
 };
 
 /*
